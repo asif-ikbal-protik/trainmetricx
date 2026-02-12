@@ -130,7 +130,6 @@ export default function HolographicMatch() {
                             top: `${entity.y}%`,
                             z: 10
                         }}
-                    /* Add some vertical "float" for specific entities if desired */
                     >
                         {/* Player/Ball Visual */}
                         <div className={`
