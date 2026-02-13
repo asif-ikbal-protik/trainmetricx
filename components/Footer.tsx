@@ -51,8 +51,8 @@ export default function Footer() {
                         <div className="flex gap-4">
                             {[
                                 { icon: <Twitter className="w-4 h-4" />, href: "#" },
-                                { icon: <Linkedin className="w-4 h-4" />, href: "#" },
-                                { icon: <Github className="w-4 h-4" />, href: "#" }
+                                { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/company/train-matricx" },
+
                             ].map((social, i) => (
                                 <a
                                     key={i}
