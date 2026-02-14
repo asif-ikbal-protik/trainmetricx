@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-background: var(--background);
@@ -9,17 +10,51 @@
   --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-scan: scan 3s linear infinite;
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  /* Typography Overrides */
+  --color-prose-body: #94a3b8;
+  /* slate-400 */
+  --color-prose-headings: #ffffff;
+  --color-prose-links: var(--primary);
+  --color-prose-bold: #ffffff;
+  --color-prose-counters: #64748b;
+  --color-prose-bullets: var(--primary);
+  --color-prose-hr: rgba(255, 255, 255, 0.1);
+  --color-prose-quotes: #ffffff;
+  --color-prose-quote-borders: var(--primary);
+  --color-prose-captions: #64748b;
+  --color-prose-code: var(--primary);
+  --color-prose-pre-code: #ffffff;
+  --color-prose-pre-bg: rgba(0, 0, 0, 0.5);
+  --color-prose-th-borders: #334155;
+  --color-prose-td-borders: #1e293b;
 }
 
 :root {
-  --background: #0a0e1a; /* Dark Slate */
+  --background: #0a0e1a;
+  /* Dark Slate */
   --foreground: #ededed;
-  --primary: #0066FF; /* Electric Blue */
-  --secondary: #00FF88; /* Neon Green */
-  --accent: #9945FF; /* Purple/Magenta */
-  --muted: #1A1F2E; /* Dark Glass */
+  --primary: #0066FF;
+  /* Electric Blue */
+  --secondary: #00FF88;
+  /* Neon Green */
+  --accent: #9945FF;
+  /* Purple/Magenta */
+  --muted: #1A1F2E;
+  /* Dark Glass */
 }
 
 body {
@@ -38,6 +73,7 @@ body {
 
 .text-gradient {
   background: linear-gradient(to right, #0066FF, #00FF88);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
