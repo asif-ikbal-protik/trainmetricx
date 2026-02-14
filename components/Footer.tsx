@@ -12,9 +12,10 @@ const footerLinks = {
     ],
     company: [
         { name: "About Us", href: "#" },
+        { name: "Meet the Team", href: "/team" },
         { name: "Careers", href: "#" },
         { name: "Case Studies", href: "#" },
-        { name: "Blog", href: "#" }
+        { name: "Blog", href: "/blog" }
     ],
     support: [
         { name: "Contact", href: "#" },
@@ -57,6 +58,8 @@ export default function Footer() {
                                 <a
                                     key={i}
                                     href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
                                 >
                                     {social.icon}
