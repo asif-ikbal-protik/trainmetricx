@@ -15,7 +15,6 @@ const navLinks = [
     { name: "Workflow", href: "#workflow" },
     { name: "Accuracy", href: "#accuracy" },
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Team", href: "/team" },
     { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "#faq" },
 ];
