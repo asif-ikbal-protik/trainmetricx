@@ -1,6 +1,6 @@
 # Content Team Guide: Posting to the Blog 🛰️✍️
 
-Welcome to the Train Metrics intelligence feed! This guide will show you how to write, image, and publish articles to the `/blog` section.
+Welcome to the Train Matricx intelligence feed! This guide will show you how to write, image, and publish articles to the `/blog` section.
 
 ## 1. Create a Post
 All blog posts are kept in the `content/blog` folder.

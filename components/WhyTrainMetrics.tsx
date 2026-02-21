@@ -58,7 +58,7 @@ export default function WhyTrainMetrics() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-bold text-white mb-6"
                     >
-                        Why <span className="text-primary">Train Metrics?</span>
+                        Why <span className="text-primary">Train Matricx?</span>
                     </motion.h2>
                     <p className="text-white/60 text-lg">
                         We bridge the gap between raw video and high-performance AI models by combining domain intelligence with technical precision.

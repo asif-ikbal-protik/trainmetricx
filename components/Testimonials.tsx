@@ -9,7 +9,7 @@ const testimonials = [
         name: "Dark Horse AI",
         logo: "/dh-logo.svg",
         role: "Strategic Partner",
-        quote: "Train Metrics has fundamentally changed how we approach skeletal tracking. Their precision is unmatched in the industry, allowing our models to achieve state-of-the-art performance in record time.",
+        quote: "Train Matricx has fundamentally changed how we approach skeletal tracking. Their precision is unmatched in the industry, allowing our models to achieve state-of-the-art performance in record time.",
         featured: true
     },
     {
@@ -23,7 +23,7 @@ const testimonials = [
         name: "Apex Football",
         logo: null,
         role: "Head of Data Science",
-        quote: "Scaling our annotation needs was a massive bottleneck until we partnered with Train Metrics. Their human-in-the-loop system is the gold standard for high-accuracy training data.",
+        quote: "Scaling our annotation needs was a massive bottleneck until we partnered with Train Matricx. Their human-in-the-loop system is the gold standard for high-accuracy training data.",
         featured: false
     },
     {
@@ -37,14 +37,14 @@ const testimonials = [
         name: "Precision Pitch",
         logo: null,
         role: "Product Manager",
-        quote: "Working with Train Metrics is seamless. Their custom JSON exports integrated into our existing pipeline with zero friction. Truly developer-first data services.",
+        quote: "Working with Train Matricx is seamless. Their custom JSON exports integrated into our existing pipeline with zero friction. Truly developer-first data services.",
         featured: false
     },
     {
         name: "Elite Motion AI",
         logo: null,
         role: "CEO",
-        quote: "For high-stakes sports analytics, data integrity is everything. Train Metrics delivers 99.8% precision consistently, enabling us to trust our model's outputs implicitly.",
+        quote: "For high-stakes sports analytics, data integrity is everything. Train Matricx delivers 99.8% precision consistently, enabling us to trust our model's outputs implicitly.",
         featured: false
     }
 ];

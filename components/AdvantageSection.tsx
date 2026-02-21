@@ -15,7 +15,9 @@ export default function AdvantageSection() {
                     className="relative w-full rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-4 md:p-8"
                 >
                     <div className="text-center mb-8">
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">The Train Metrics Advantage</h3>
+                        <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                            The Train Matricx <span className="text-primary">Advantage</span>
+                        </h3>
                         <p className="text-white/60 max-w-2xl mx-auto">
                             See how partnering with us accelerates your AI timeline compared to building in-house teams.
                         </p>
