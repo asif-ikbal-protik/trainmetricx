@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Cpu, FlaskConical, Trophy, Radio, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const useCases = [
     {
@@ -10,7 +11,8 @@ const useCases = [
         description: "Accelerate your R&D for player tracking, ball telemetry, and 3D reconstruction models.",
         points: ["Computer Vision Training", "ID Linkage Consistency", "3D Pose Estimation"],
         color: "from-blue-500/20 to-blue-600/5",
-        accent: "text-blue-400"
+        accent: "text-blue-400",
+        image: "/images/usecases/tech.png"
     },
     {
         title: "AI Research Labs",
@@ -18,7 +20,8 @@ const useCases = [
         description: "Access high-quality, ground-truth datasets for sports science and tactical research.",
         points: ["Benchmark Datasets", "Algorithmic Validation", "Peer-Reviewed Data"],
         color: "from-emerald-500/20 to-emerald-600/5",
-        accent: "text-emerald-400"
+        accent: "text-emerald-400",
+        image: "/images/usecases/research.png"
     },
     {
         title: "Professional Clubs",
@@ -26,7 +29,8 @@ const useCases = [
         description: "Transform raw footage into actionable tactical insights and performance metrics.",
         points: ["Tactical Performance Logs", "Scouting Intelligence", "Biomechanical Audits"],
         color: "from-orange-500/20 to-orange-600/5",
-        accent: "text-orange-400"
+        accent: "text-orange-400",
+        image: "/images/usecases/clubs.png"
     },
     {
         title: "Broadcast & Media",
@@ -34,7 +38,8 @@ const useCases = [
         description: "Power live graphics and fan engagement stats with real-time event classification.",
         points: ["Real-time Log Feeds", "Engagement Graphics", "Archival Indexing"],
         color: "from-purple-500/20 to-purple-600/5",
-        accent: "text-purple-400"
+        accent: "text-purple-400",
+        image: "/images/usecases/broadcast.png"
     }
 ];
 
@@ -73,11 +78,26 @@ export default function UseCases() {
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             className={`group relative p-8 rounded-3xl bg-gradient-to-br ${useCase.color} border border-white/5 hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden`}
                         >
+                            {/* Background Image Layer */}
+                            {useCase.image && (
+                                <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+                                    <Image
+                                        src={useCase.image}
+                                        alt={useCase.title}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                    {/* Bottom gradient only for readability */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                                </div>
+                            )}
+
                             {/* Card Background Glow */}
-                            <div className="absolute top-0 right-0 p-12 bg-white/5 blur-3xl rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute top-0 right-0 p-12 bg-white/5 blur-3xl rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity z-0" />
 
                             <div className="relative z-10">
-                                <div className={`w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center mb-6 ${useCase.accent}`}>
+                                <div className={`w-14 h-14 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center mb-6 ${useCase.accent}`}>
                                     {useCase.icon}
                                 </div>
 
@@ -94,7 +114,7 @@ export default function UseCases() {
                                     {useCase.points.map((point, i) => (
                                         <span
                                             key={i}
-                                            className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] text-white/40 uppercase tracking-widest"
+                                            className="px-3 py-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[10px] text-white/60 uppercase tracking-widest"
                                         >
                                             {point}
                                         </span>
@@ -103,7 +123,7 @@ export default function UseCases() {
                             </div>
 
                             {/* Decorative Corner Element */}
-                            <div className="absolute bottom-0 right-0 p-4 opacity-10">
+                            <div className="absolute bottom-0 right-0 p-4 opacity-10 z-10 pointer-events-none">
                                 <div className="w-24 h-24 border-r-2 border-b-2 border-white rounded-br-3xl" />
                             </div>
                         </motion.div>

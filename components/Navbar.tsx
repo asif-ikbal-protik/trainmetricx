@@ -9,14 +9,10 @@ import Image from "next/image";
 import { getCalApi } from "@calcom/embed-react";
 
 const navLinks = [
-    { name: "Sports", href: "#sports" },
-    { name: "Solutions", href: "#solutions" },
+    { name: "Sports Type", href: "#sports" },
     { name: "Services", href: "#services" },
     { name: "Workflow", href: "#workflow" },
-    { name: "Accuracy", href: "#accuracy" },
-    { name: "Testimonials", href: "#testimonials" },
     { name: "Blog", href: "/blog" },
-    { name: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
