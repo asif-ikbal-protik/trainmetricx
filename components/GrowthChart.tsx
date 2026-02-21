@@ -3,177 +3,242 @@
 import { motion } from "framer-motion";
 
 export default function GrowthChart() {
-    // Top Curve (With Train Metrics) Points
+    // Top Curve (With Train Matricx) Points mapped to 1000x600 SVG viewBox
     const topPoints = [
-        { cx: "20%", cy: "50%", label: "Rapid\nonboarding", delay: 0 },
-        { cx: "40%", cy: "50%", label: "Dedicated team\nwith domain knowledge", delay: 0.5 },
-        { cx: "60%", cy: "40%", label: "Consistent\nhigh-quality data", delay: 1.0 },
-        { cx: "80%", cy: "25%", label: "Active\ncollaboration", delay: 1.5 },
-        { cx: "95%", cy: "10%", label: "Reliable\noutcomes", delay: 2.0 },
+        { x: 185, y: 288, label: "Rapid\nonboarding", delay: 0.2 },
+        { x: 327, y: 230, label: "Dedicated team\nwith domain knowledge", delay: 0.6 },
+        { x: 514, y: 156, label: "Consistent\nhigh-quality data", delay: 1.0 },
+        { x: 731, y: 112, label: "Active\ncollaboration", delay: 1.4 },
+        { x: 950, y: 100, label: "Reliable\noutcomes", delay: 1.8 },
     ];
 
-    // Bottom Curve (Without Train Metrics) Points
+    // Bottom Curve (Without Train Matricx) Points mapped to 1000x600 SVG viewBox
     const bottomPoints = [
-        { cx: "20%", cy: "60%", label: "Slow\nonboarding", delay: 0 },
-        { cx: "40%", cy: "70%", label: "Generic\nannotators", delay: 0.5 },
-        { cx: "60%", cy: "80%", label: "Quality &\nconsistency issues", delay: 1.0 },
-        { cx: "80%", cy: "90%", label: "Limited\ncommunication & support", delay: 1.5 },
-        { cx: "95%", cy: "100%", label: "Project\ndelays", delay: 2.0 },
+        { x: 185, y: 312, label: "Slow\nonboarding", delay: 0.2 },
+        { x: 327, y: 370, label: "Generic\nannotators", delay: 0.6 },
+        { x: 514, y: 444, label: "Quality &\nconsistency issues", delay: 1.0 },
+        { x: 731, y: 488, label: "Limited\ncommunication & support", delay: 1.4 },
+        { x: 950, y: 500, label: "Project\ndelays", delay: 1.8 },
     ];
 
     return (
-        <div className="w-full h-full min-h-[400px] md:min-h-[500px] relative font-sans">
+        <div className="w-full h-full min-h-[500px] md:min-h-[600px] relative font-sans select-none my-12">
+
+            {/* Dark Cybernetic Canvas */}
+            <div className="absolute inset-0 bg-[#050505] overflow-hidden rounded-3xl border border-white/5">
+                {/* Horizontal grid lines */}
+                <div className="absolute inset-0 flex flex-col justify-between opacity-5">
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="w-full h-px bg-white" />
+                    ))}
+                </div>
+            </div>
+
+            {/* --- Scalable SVG Layer --- */}
             <svg
-                className="w-full h-full absolute inset-0 overflow-visible"
+                className="w-full h-full absolute inset-0 overflow-visible z-10"
                 preserveAspectRatio="none"
-                viewBox="0 0 1000 500"
+                viewBox="0 0 1000 600"
             >
-                {/* Center Baseline */}
-                <motion.line
-                    x1="100" y1="250" x2="950" y2="250"
-                    stroke="rgba(255,255,255,0.1)"
-                    strokeWidth="2"
-                    strokeDasharray="10 10"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                />
+                <defs>
+                    <linearGradient id="topBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(6,182,212,0)" />
+                        <stop offset="20%" stopColor="rgba(6,182,212,0.8)" />
+                        <stop offset="100%" stopColor="rgba(6,182,212,1)" />
+                    </linearGradient>
 
-                {/* --- Top Curve (With Train Metrics) --- */}
+                    <linearGradient id="bottomBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(220,38,38,0)" />
+                        <stop offset="20%" stopColor="rgba(220,38,38,0.4)" />
+                        <stop offset="100%" stopColor="rgba(220,38,38,0.8)" />
+                    </linearGradient>
+                </defs>
 
-                {/* Top Path */}
-                <motion.path
-                    d="M 100,250 L 400,250 Q 700,250 950,50"
+                {/* --- Top Track (Train Matricx) --- */}
+
+                {/* Faint base grid track */}
+                <path
+                    d="M 0,300 L 100,300 C 300,300 400,100 950,100"
                     fill="none"
-                    stroke="#0066FF" // blue-600
-                    strokeWidth="3"
+                    stroke="rgba(6,182,212,0.1)"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                />
+
+                {/* Animated Neon Beam */}
+                <motion.path
+                    d="M 0,300 L 100,300 C 300,300 400,100 950,100"
+                    fill="none"
+                    stroke="url(#topBeam)"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    style={{ filter: "drop-shadow(0 0 12px rgba(6,182,212,0.9))" }}
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
+                    transition={{ duration: 2.5, ease: "easeInOut" }}
                 />
 
-                {/* Top Nodes & Labels */}
+                {/* Glowing Nodes - Top */}
                 {topPoints.map((point, i) => (
-                    <g key={`top-${i}`}>
+                    <g key={`top-svg-${i}`}>
                         <motion.circle
-                            cx={point.cx}
-                            cy={point.cy}
-                            r="6"
-                            fill="#0066FF"
+                            cx={point.x}
+                            cy={point.y}
+                            r="8"
+                            fill="#06b6d4" // cyan-500
+                            style={{ filter: "drop-shadow(0 0 16px rgba(6,182,212,1))" }}
                             initial={{ scale: 0, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 1 + point.delay, type: "spring" }}
+                            transition={{ delay: 0.5 + point.delay, type: "spring", stiffness: 200 }}
                         />
-                        {/* Connecting Line to baseline (optional, visual flair) */}
-                        {i > 1 && (
-                            <motion.line
-                                x1={point.cx} y1={point.cy} x2={point.cx} y2="250"
-                                stroke="#0066FF" strokeWidth="1" strokeOpacity="0.3"
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 1 + point.delay }}
-                            />
-                        )}
+                        <motion.circle
+                            cx={point.x}
+                            cy={point.y}
+                            r="3"
+                            fill="#ffffff"
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.5 + point.delay + 0.2 }}
+                        />
                     </g>
                 ))}
 
-                {/* --- Bottom Curve (Without Train Metrics) --- */}
+                {/* --- Bottom Track (Without) --- */}
 
-                {/* Bottom Path */}
-                <motion.path
-                    d="M 100,250 L 300,250 Q 600,250 950,450"
+                {/* Faint base grid track */}
+                <path
+                    d="M 0,300 L 100,300 C 300,300 400,500 950,500"
                     fill="none"
-                    stroke="#334155" // slate-700
+                    stroke="rgba(220,38,38,0.05)"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                />
+
+                {/* Animated Glitch Beam */}
+                <motion.path
+                    d="M 0,300 L 100,300 C 300,300 400,500 950,500"
+                    fill="none"
+                    stroke="url(#bottomBeam)"
                     strokeWidth="2"
+                    strokeDasharray="16 12 4 8"  // Erratic glitchy look
+                    strokeLinecap="round"
+                    style={{ filter: "drop-shadow(0 0 8px rgba(220,38,38,0.6))" }}
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
+                    transition={{ duration: 3.5, ease: "easeOut" }} // Slower, struggles to progress
                 />
 
-                {/* Bottom Nodes & Labels */}
+                {/* Faded Nodes - Bottom */}
                 {bottomPoints.map((point, i) => (
-                    <g key={`bottom-${i}`}>
+                    <g key={`bottom-svg-${i}`}>
                         <motion.circle
-                            cx={point.cx}
-                            cy={point.cy}
-                            r="4"
-                            fill="#475569" // slate-600
+                            cx={point.x}
+                            cy={point.y}
+                            r="6"
+                            fill="#7f1d1d" // red-900
+                            stroke="#ef4444" // red-500
+                            strokeWidth="1.5"
                             initial={{ scale: 0, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
+                            whileInView={{ scale: 1, opacity: 0.7 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 1 + point.delay, type: "spring" }}
+                            transition={{ delay: 0.5 + point.delay, type: "spring", stiffness: 100 }}
                         />
-                        {/* Connecting Line to baseline */}
-                        {i > 0 && (
-                            <motion.line
-                                x1={point.cx} y1={point.cy} x2={point.cx} y2="250"
-                                stroke="#334155" strokeWidth="1" strokeOpacity="0.3"
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 1 + point.delay }}
-                            />
-                        )}
                     </g>
                 ))}
             </svg>
 
-            {/* HTML Labels (Absolute positioning for better text rendering than SVG text) */}
+            {/* --- HTML Overlay for Crisp Text & Glassmorphism --- */}
 
-            {/* Top Labels */}
-            {topPoints.map((point, i) => (
-                <motion.div
-                    key={`label-top-${i}`}
-                    className="absolute text-blue-400 text-xs md:text-sm text-center -translate-x-1/2 -translate-y-[150%] font-medium whitespace-pre-line leading-tight"
-                    style={{ left: point.cx, top: point.cy }}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.2 + point.delay }}
-                >
-                    {point.label}
-                </motion.div>
-            ))}
+            <div className="absolute inset-0 z-20 pointer-events-none">
 
-            {/* Bottom Labels */}
-            {bottomPoints.map((point, i) => (
-                <motion.div
-                    key={`label-bottom-${i}`}
-                    className="absolute text-slate-500 text-[10px] md:text-xs text-center -translate-x-1/2 translate-y-[50%] font-medium whitespace-pre-line leading-tight"
-                    style={{ left: point.cx, top: point.cy }}
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.2 + point.delay }}
-                >
-                    {point.label}
-                </motion.div>
-            ))}
+                {/* Title Labels (Left Axis) */}
+                <div className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 flex flex-col justify-between h-[120px] text-sm md:text-base font-bold">
+                    <motion.div
+                        className="text-cyan-400 absolute bottom-full mb-8 flex items-center gap-3 whitespace-nowrap"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_15px_rgba(6,182,212,1)]" />
+                        <div>Partnered with<br /><span className="text-white text-lg">Train Matricx</span></div>
+                    </motion.div>
 
-            {/* Y-Axis Labels (Left side) */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col justify-between h-[300px] text-sm md:text-base font-bold">
-                <motion.div
-                    className="text-blue-500 mb-auto mt-0"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                >
-                    Partnered with<br />Train Metrics
-                </motion.div>
+                    <motion.div
+                        className="text-red-500/60 absolute top-full mt-8 flex flex-col gap-1 whitespace-nowrap"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        Without<br /><span className="text-white/40">Train Matricx</span>
+                    </motion.div>
+                </div>
 
-                <motion.div
-                    className="text-slate-500 mt-auto mb-0"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                >
-                    Without<br />Train Metrics
-                </motion.div>
+                {/* Top Labels (Train Matricx) */}
+                {topPoints.map((point, i) => (
+                    <motion.div
+                        key={`label-top-${i}`}
+                        className="absolute -translate-x-1/2 -translate-y-full pb-8 md:pb-10"
+                        style={{ left: `${(point.x / 1000) * 100}%`, top: `${(point.y / 600) * 100}%` }}
+                        initial={{ opacity: 0, y: 15, scale: 0.9 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.7 + point.delay, type: "spring" }}
+                    >
+                        {/* Holographic Drop-Shadow Card */}
+                        <div className="bg-cyan-950/50 border border-cyan-400/40 backdrop-blur-md px-3 py-2 md:px-4 md:py-2.5 rounded-xl shadow-[0_8px_30px_rgba(6,182,212,0.25)] text-cyan-50 text-[10px] md:text-sm font-semibold text-center whitespace-pre-line leading-tight">
+                            {point.label}
+                        </div>
+                    </motion.div>
+                ))}
+
+                {/* Bottom Labels (Without) */}
+                {bottomPoints.map((point, i) => (
+                    <motion.div
+                        key={`label-bottom-${i}`}
+                        className="absolute -translate-x-1/2 pt-6 md:pt-8"
+                        style={{ left: `${(point.x / 1000) * 100}%`, top: `${(point.y / 600) * 100}%` }}
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 0.8, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.7 + point.delay }}
+                    >
+                        {/* Faded Glitch Card */}
+                        <div className="bg-red-950/20 border border-red-900/60 backdrop-blur-sm px-2 py-1.5 md:px-3 md:py-2 rounded-lg text-red-300 text-[9px] md:text-xs text-center whitespace-pre-line leading-tight border-dashed">
+                            {point.label}
+                        </div>
+                    </motion.div>
+                ))}
+
+                {/* Bottom Left Team Indicators */}
+                <div className="absolute left-2 md:left-6 bottom-4 md:bottom-6 flex flex-col md:flex-row gap-4 md:gap-8 pointer-events-auto">
+                    <motion.div
+                        className="flex items-center gap-2 text-white/80 text-xs md:text-sm font-medium"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                    >
+                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                        Dedicated Project Manager
+                    </motion.div>
+                    <motion.div
+                        className="flex items-center gap-2 text-white/80 text-xs md:text-sm font-medium"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
+                    >
+                        <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                        Dedicated QA Team
+                    </motion.div>
+                </div>
+
             </div>
         </div>
     );
