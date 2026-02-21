@@ -116,7 +116,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-sm text-white/40">
                                 <MapPin className="w-4 h-4 text-primary shrink-0" />
-                                <span>Global Distributed Workforce <br /> HQ: London, UK</span>
+                                <span>Global Distributed Workforce <br /> HQ : Dhaka, Bangladesh</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm text-white/40">
                                 <Mail className="w-4 h-4 text-primary shrink-0" />
@@ -127,22 +127,18 @@ export default function Footer() {
 
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-white/20 text-[10px] uppercase tracking-widest">
-                        © 2024 Train Matricx. All rights reserved.
-                    </p>
+                {/* Compliance Badges */}
+                <div className="mb-14 flex flex-wrap items-center justify-center md:justify-start gap-8 md:gap-14 opacity-100 grayscale hover:grayscale-0 transition-all duration-500">
+                    <Image src="/images/compliance/iso_v2.png" alt="ISO Certification" width={140} height={70} className="h-14 md:h-16 w-auto object-contain hover:opacity-100 transition-opacity" />
+                    <Image src="/images/compliance/gdpr.svg" alt="GDPR Compliant" width={140} height={70} className="h-14 md:h-16 w-auto object-contain hover:opacity-100 transition-opacity" />
+                    <Image src="/images/compliance/hipaa-logo.png" alt="HIPAA Compliant" width={140} height={70} className="h-14 md:h-16 w-auto object-contain hover:opacity-100 transition-opacity" />
+                </div>
 
-                    <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[10px] text-white/30 uppercase tracking-widest font-mono">System Status: Operational</span>
-                        </div>
-                        <div className="w-px h-4 bg-white/5" />
-                        <div className="flex items-center gap-2">
-                            <span className="text-[10px] text-white/30 uppercase tracking-widest font-mono">Precision: 99.8%</span>
-                        </div>
-                    </div>
+                {/* Bottom Bar */}
+                <div className="pt-8 border-t border-white/5 flex justify-center items-center">
+                    <p className="text-white/20 text-[10px] uppercase tracking-widest text-center">
+                        © 2026 Train Matricx. All rights reserved.
+                    </p>
                 </div>
 
             </div>

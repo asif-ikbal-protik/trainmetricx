@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import SportsWeCover from "@/components/SportsWeCover";
+import AdvantageSection from "@/components/AdvantageSection";
 import HowItWorks from "@/components/HowItWorks";
 import CoreServices from "@/components/CoreServices";
 import TechAccuracy from "@/components/TechAccuracy";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <LogoCarousel />
       <SportsWeCover />
+      <AdvantageSection />
       <HowItWorks />
       <CoreServices />
       <TechAccuracy />
