@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
-import Button from "./ui/Button";
 import Link from "next/link";
 import Image from "next/image";
 import { getCalApi } from "@calcom/embed-react";
@@ -39,85 +38,76 @@ export default function Navbar() {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6 }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
-                    ? "bg-black/80 backdrop-blur-xl py-3 border-white/10 shadow-lg"
-                    : "bg-transparent py-5 border-transparent"
-                    }`}
+                className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 md:px-6"
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center group">
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="relative"
-                        >
-                            <Image
-                                src="/trainmatricx-logo.png"
-                                alt="Train Matricx"
-                                width={210}
-                                height={56}
-                                priority
-                                className="h-11 w-auto object-contain"
-                            />
-                        </motion.div>
-                    </Link>
-
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
+                {/* Floating Pill Bar */}
+                <div
+                    className={`mt-3 md:mt-4 w-full max-w-6xl transition-all duration-500 rounded-2xl border flex items-center justify-between px-4 md:px-6 ${isScrolled
+                        ? "bg-black/70 backdrop-blur-2xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-2"
+                        : "bg-white/5 backdrop-blur-xl border-white/[0.06] py-2.5"
+                        }`}
+                >
+                    {/* Left: Navigation Links */}
+                    <div className="hidden md:flex items-center gap-1">
                         {navLinks.map((link, i) => (
                             <motion.div
                                 key={link.name}
-                                initial={{ opacity: 0, y: -20 }}
+                                initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: i * 0.1 }}
+                                transition={{ duration: 0.4, delay: i * 0.08 }}
                             >
                                 <Link
                                     href={link.href}
-                                    className="text-sm font-semibold text-white/50 hover:text-white transition-all duration-300 relative group/link py-1 flex items-center gap-1"
+                                    className="text-[13px] font-medium text-white/50 hover:text-white transition-all duration-300 px-3.5 py-1.5 rounded-full hover:bg-white/[0.06]"
                                 >
                                     {link.name}
-                                    <motion.span
-                                        className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary blur-[1px]"
-                                        whileHover={{ width: "100%" }}
-                                        transition={{ duration: 0.3 }}
-                                    />
-                                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary opacity-0 group-hover/link:w-full group-hover/link:opacity-100 transition-all duration-300 shadow-[0_0_8px_rgba(0,102,255,0.8)]" />
                                 </Link>
                             </motion.div>
                         ))}
                     </div>
 
-                    {/* Right Side Actions */}
+                    {/* Mobile: Hamburger */}
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="md:hidden p-1.5 text-white/70 hover:text-white transition-colors"
+                    >
+                        {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </button>
+
+                    {/* Center: Logo */}
+                    <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center">
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Image
+                                src="/trainmatricx-logo.png"
+                                alt="Train Matricx"
+                                width={180}
+                                height={48}
+                                priority
+                                className="h-10 md:h-11 w-auto object-contain"
+                            />
+                        </motion.div>
+                    </Link>
+
+                    {/* Right: CTA Button */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.8 }}
-                        className="flex items-center gap-4"
+                        transition={{ duration: 0.5, delay: 0.5 }}
                     >
-                        <Button
-                            variant="primary"
-                            size="md"
+                        <button
                             data-cal-namespace="30min"
                             data-cal-link="trainmatricx/30min"
                             data-cal-config='{"layout":"month_view"}'
-                            className="hidden sm:flex px-6 text-[11px] uppercase tracking-wider font-bold hover:shadow-[0_0_20px_rgba(0,102,255,0.4)] transition-all"
+                            className="hidden sm:flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/10 text-white text-[12px] font-semibold uppercase tracking-wider hover:bg-white/20 hover:border-white/20 transition-all duration-300 backdrop-blur-sm cursor-pointer"
                         >
                             Book a Call
-                        </Button>
-
-                        {/* Mobile Menu Toggle */}
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="md:hidden p-1.5 text-white/70 hover:text-white transition-colors"
-                        >
-                            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                         </button>
                     </motion.div>
                 </div>
             </motion.nav>
-
-
 
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
@@ -169,21 +159,19 @@ export default function Navbar() {
                             </div>
 
                             <div className="mt-auto pt-12">
-                                <Button
-                                    variant="primary"
-                                    size="lg"
-                                    className="w-full"
+                                <button
                                     data-cal-namespace="30min"
                                     data-cal-link="trainmatricx/30min"
                                     data-cal-config='{"layout":"month_view"}'
+                                    className="w-full px-6 py-4 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-wider hover:bg-primary/90 transition-all cursor-pointer"
                                 >
                                     Book a Call
-                                </Button>
+                                </button>
                             </div>
                         </motion.div>
                     )
                 }
-            </AnimatePresence >
+            </AnimatePresence>
         </>
     );
 }

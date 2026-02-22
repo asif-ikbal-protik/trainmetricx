@@ -38,8 +38,17 @@ export default function RootLayout({
         id="root-layout"
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
-        <Navbar />
-        {children}
+        {/* X Organizations Black Background with Top Glow */}
+        <div
+          className="fixed inset-0 z-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+          }}
+        />
+        <div className="relative z-10">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

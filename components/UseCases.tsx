@@ -45,7 +45,7 @@ const useCases = [
 
 export default function UseCases() {
     return (
-        <section id="solutions" className="py-24 bg-black relative overflow-hidden">
+        <section id="solutions" className="py-24 bg-transparent relative overflow-hidden">
 
             {/* Background decoration */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-primary/10 blur-[150px] rounded-full pointer-events-none" />

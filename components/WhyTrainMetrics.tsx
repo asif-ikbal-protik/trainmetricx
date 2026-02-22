@@ -44,7 +44,7 @@ const features = [
 
 export default function WhyTrainMetrics() {
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
+        <section className="py-24 bg-transparent relative overflow-hidden">
             {/* Background radial glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.05),transparent_70%)] pointer-events-none" />
 

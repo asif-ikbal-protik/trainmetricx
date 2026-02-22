@@ -49,7 +49,7 @@ export default function HowItWorks() {
     });
 
     return (
-        <section id="workflow" ref={containerRef} className="py-32 bg-[#050505] relative overflow-hidden">
+        <section id="workflow" ref={containerRef} className="py-32 bg-transparent relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 

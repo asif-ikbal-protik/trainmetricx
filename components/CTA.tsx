@@ -16,7 +16,7 @@ export default function CTA() {
     }, []);
 
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
+        <section className="py-24 bg-transparent relative overflow-hidden">
             {/* Background Visuals */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none -mr-48 -mt-48" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 blur-[120px] rounded-full pointer-events-none -ml-48 -mb-48" />

@@ -17,7 +17,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="w-full relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+        <section className="w-full relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent">
             {/* Full Width Container */}
             <div className="w-full h-full relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 h-full min-h-screen">

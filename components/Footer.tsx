@@ -26,7 +26,7 @@ const footerLinks = {
 
 export default function Footer() {
     return (
-        <footer className="bg-black border-t border-white/5 pt-24 pb-12 relative overflow-hidden">
+        <footer className="bg-transparent border-t border-white/5 pt-24 pb-12 relative overflow-hidden">
             {/* Subtle Background Glow */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
