@@ -51,7 +51,7 @@ const sports = [
 
 export default function SportsWeCover() {
     return (
-        <section id="sports" className="py-24 bg-black relative overflow-hidden">
+        <section id="sports" className="py-24 bg-transparent relative overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] opacity-20 pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">

@@ -136,7 +136,7 @@ export default function CoreServices() {
     const [activeTab, setActiveTab] = useState(services[0].id);
 
     return (
-        <section id="services" className="py-24 bg-black relative overflow-hidden">
+        <section id="services" className="py-24 bg-transparent relative overflow-hidden">
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
 
