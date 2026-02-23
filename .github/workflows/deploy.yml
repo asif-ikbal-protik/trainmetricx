@@ -24,18 +24,18 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-      - name: Deploy via SSH
-        uses: easingthemes/ssh-deploy@v5
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.SSH_PORT }}
-          TARGET: /home/trainmvc/trainmetric/
-          SOURCE: "./"
-          EXCLUDE: "node_modules/, .git/, .github/"
+          switches: -avzr --delete --exclude='node_modules' --exclude='.git' --exclude='.github'
+          path: ./
+          remote_path: /home/trainmvc/trainmetric/
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_port: ${{ secrets.SSH_PORT }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install & Restart on Server
+      - name: Install deps & restart on server
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.REMOTE_HOST }}
@@ -44,6 +44,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/trainmvc/trainmetric
-            source /home/trainmvc/nodevenv/trainmetric/$(ls /home/trainmvc/nodevenv/trainmetric/ 2>/dev/null | head -1)/bin/activate 2>/dev/null || true
             npm install --production
-            touch /home/trainmvc/trainmetric/tmp/restart.txt 2>/dev/null || mkdir -p /home/trainmvc/trainmetric/tmp && touch /home/trainmvc/trainmetric/tmp/restart.txt
+            mkdir -p tmp
+            touch tmp/restart.txt
