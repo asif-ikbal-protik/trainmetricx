@@ -27,7 +27,7 @@ jobs:
       - name: Deploy via rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
-          switches: -avzr --delete --exclude='node_modules' --exclude='.git' --exclude='.github'
+          switches: -avzr --delete --exclude='node_modules' --exclude='.git' --exclude='.github' --exclude='.next/cache'
           path: ./
           remote_path: /home/trainmvc/trainmetric/
           remote_host: ${{ secrets.REMOTE_HOST }}
@@ -35,7 +35,7 @@ jobs:
           remote_port: ${{ secrets.SSH_PORT }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install deps and restart app
+      - name: Install deps, clean cache, and restart app
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.REMOTE_HOST }}
@@ -45,4 +45,10 @@ jobs:
           script: |
             cd /home/trainmvc/trainmetric
             npm install
+            # Clean up npm cache and junk files to free up disk space
+            npm cache clean --force || true
+            rm -rf /home/trainmvc/.npm/_cacache || true
+            rm -rf /home/trainmvc/trainmetric/.next/cache || true
+            rm -rf /home/trainmvc/tmp/* || true
+            rm -rf /home/trainmvc/.cache || true
             pkill -f "node server.js" || true
