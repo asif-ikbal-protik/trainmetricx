@@ -45,5 +45,9 @@ jobs:
           script: |
             cd /home/trainmvc/trainmetric
             npm install
-            mkdir -p tmp
-            touch tmp/restart.txt
+            pkill -f "node server.js" || true
+            sleep 2
+            export PORT=30001
+            nohup node server.js > /home/trainmvc/trainmetric/app.log 2>&1 &
+            sleep 3
+            echo "App restarted successfully"
