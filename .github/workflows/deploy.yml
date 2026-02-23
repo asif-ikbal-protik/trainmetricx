@@ -35,7 +35,7 @@ jobs:
           remote_port: ${{ secrets.SSH_PORT }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install deps & restart on server
+      - name: Install deps and restart app
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.REMOTE_HOST }}
@@ -46,8 +46,3 @@ jobs:
             cd /home/trainmvc/trainmetric
             npm install
             pkill -f "node server.js" || true
-            sleep 2
-            export PORT=30001
-            nohup node server.js > /home/trainmvc/trainmetric/app.log 2>&1 &
-            sleep 3
-            echo "App restarted successfully"
