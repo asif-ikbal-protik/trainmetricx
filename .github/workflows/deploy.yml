@@ -44,6 +44,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/trainmvc/trainmetric
-            npm install --production
+            npm install
             mkdir -p tmp
             touch tmp/restart.txt
