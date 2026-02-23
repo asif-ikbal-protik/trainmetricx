@@ -52,4 +52,5 @@ jobs:
             rm -rf /home/trainmvc/trainmetric/.next/cache || true
             rm -rf /home/trainmvc/tmp/* || true
             rm -rf /home/trainmvc/.cache || true
-            pkill -f "node server.js" || true
+            # Precisely kill ONLY the exact Next.js passenger process, not the SSH process
+            pkill -x "node server.js" || true
