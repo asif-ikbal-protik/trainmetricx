@@ -15,15 +15,11 @@ At **[Train Matricx](https://trainmatricx.com/)**, we help sports technology com
 
 Here is why the future belongs to skeletal tracking in sports.
 
-### 
-
-### 
-
 ### **The Evolution of Football AI Tracking**
 
 Football analytics did not become sophisticated overnight. It evolved in layers , each phase solving one problem while exposing another. What started as simple statistical tracking has gradually transformed into intelligent motion modeling powered by AI. 
 
-![image2](/blog/assets/B2-1.png)
+![Evolution of AI Tracking](/blog/assets/B2-1.png)
 
 Football analytics has evolved in three major phases:
 
@@ -33,9 +29,7 @@ Football analytics has evolved in three major phases:
 
 The problem is that most systems stop at phase two. Bounding boxes tell you *where* a player is, but skeletal tracking tells you *what* the player is doing. That difference changes everything. The evolution of football analytics is not just about better technology. It is about deeper interpretation. Each phase moves closer to decoding the true language of the game \- movement. And in that progression, skeletal tracking represents the most significant leap forward yet.
 
-## 
-
-## **The Problem with Bounding Boxes in Football AI Tracking**
+**The Problem with Bounding Boxes in Football AI Tracking**
 
 Bounding boxes were a breakthrough in computer vision. They allowed AI systems to detect players, track movement, and analyze spatial positioning. For early sports analytics models, this was revolutionary. Analysts could measure distance covered, generate heatmaps, and monitor positional structures in real time.
 
@@ -51,7 +45,7 @@ This is where skeletal tracking in sports changes the game.
 
 At Train Matricx, our soccer data annotation framework uses 22 key skeletal points to model the human body in motion. Each frame becomes a structured representation of head alignment, shoulder rotation, elbow extension, hip positioning, knee flexion, ankle orientation, and weight distribution.
 
-![image3](/blog/assets/B2-2.png)
+![Skeletal Structure Diagram](/blog/assets/B2-2.png)
 
 Instead of seeing a player as a box, the model sees a dynamic skeletal graph.
 
@@ -87,7 +81,7 @@ Football’s most controversial moments often occur during tackles. Was there co
 * It registers upper body aggression markers, arm extensions indicating potential fouls, and balance disruption.  
 * For companies building automated foul detection or VAR-enhancement systems, soccer data annotation at this skeletal depth is mandatory.
 
-#### **![image4](/blog/assets/B2-3.png)**
+![Tackle Recognition AI](/blog/assets/B2-3.png)
 
 #### **3\. Offside Detection with Context Awareness**
 
@@ -104,17 +98,13 @@ Not all passes carry equal tactical weight. A lateral recycle pass differs funda
 * Skeletal tracking enables classification based on foot contact angle, pre-pass body orientation, weight distribution, passing leg velocity, and defender proximity.  
 * AI can now accurately identify through balls, no-look passes, defensive clearances, pressured passes, and tactical switches.
 
-### 
-
-### 
-
 ### **Complex Event Recognition AI & The Train Matricx Taxonomy**
 
 Football is a chain of interdependent micro-events: body rotation, acceleration, defender reaction, ball redirection, and tactical positioning. Complex event recognition AI relies entirely on structured temporal data.
 
 At **Train Matricx**, our soccer data annotation links skeletal tracking, ball tracking, player ID tracking, context tagging, and event phase labeling. This allows models to recognize multi-frame interactions like counter-attack initiations, press resistance sequences, build-up play patterns, and high-press triggers.
 
-![image5](/blog/assets/B2-4.png)
+![Train Matricx Taxonomy](/blog/assets/B2-4.png)
 
 Our hierarchical football taxonomy is engineered for elite-level AI:
 
@@ -144,7 +134,7 @@ To solve this, the **Train Matricx** annotation workflow prioritizes:
 * Domain-expert annotators handling frame interpolation alignment and edge-case tagging.  
 * Custom taxonomy adaptation and NDA-compliant secure workflows.
 
-![image6](/blog/assets/B2-5.png)
+![Train Matricx Workflow](/blog/assets/B2-5.png)
 
 ### **Elevating the Game**
 
