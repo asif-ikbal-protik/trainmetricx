@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trainmatricx.com"),
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "xzYD0DXi8TzhIvK2wWd0cS5fYXQxmAhfWtx-eLIhNys",
   },

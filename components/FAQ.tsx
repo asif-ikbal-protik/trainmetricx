@@ -34,8 +34,25 @@ const faqs = [
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+            },
+        })),
+    };
+
     return (
         <section id="faq" className="py-24 bg-transparent relative overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
 
