@@ -1,5 +1,6 @@
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Navbar from "@/components/Navbar";
@@ -17,6 +18,45 @@ export async function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const post = getPostBySlug(slug);
+
+    if (!post) {
+        return {
+            title: "Post Not Found | Train Matricx",
+        };
+    }
+
+    return {
+        title: `${post.title} | Train Matricx Intelligence Feed`,
+        description: post.excerpt,
+        authors: [{ name: post.author }],
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: `https://trainmatricx.com/blog/${slug}`,
+            type: "article",
+            publishedTime: post.date,
+            authors: [post.author],
+            images: [
+                {
+                    url: post.coverImage,
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.excerpt,
+            images: [post.coverImage],
+        },
+    };
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
@@ -25,8 +65,37 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        image: `https://trainmatricx.com${post.coverImage}`,
+        datePublished: post.date,
+        author: {
+            "@type": "Person",
+            name: post.author,
+        },
+        publisher: {
+            "@type": "Organization",
+            name: "Train Matricx",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://trainmatricx.com/trainmatricx-logo.png",
+            },
+        },
+        description: post.excerpt,
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://trainmatricx.com/blog/${slug}`,
+        },
+    };
+
     return (
         <main className="min-h-screen bg-[#050505] text-white selection:bg-primary selection:text-white pb-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             <Navbar />
 
             {/* Post Hero */}

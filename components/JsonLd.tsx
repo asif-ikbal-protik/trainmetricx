@@ -7,10 +7,14 @@ export default function JsonLd() {
         logo: "https://trainmatricx.com/trainmatricx-logo.png",
         description:
             "High-precision computer vision training data for sports. Specializing in football, basketball, cricket, and more.",
-        sameAs: [],
+        sameAs: [
+            "https://www.linkedin.com/company/train-matricx",
+            "https://twitter.com/trainmatricx",
+        ],
         contactPoint: {
             "@type": "ContactPoint",
-            contactType: "sales",
+            contactType: "customer support",
+            email: "info@trainmatricx.com",
             url: "https://trainmatricx.com",
         },
         serviceType: [
