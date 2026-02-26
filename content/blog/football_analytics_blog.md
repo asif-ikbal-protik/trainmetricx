@@ -4,7 +4,7 @@ date: "2026-02-25"
 category: "Technology"
 author: "Jubayer Ahmed"
 coverImage: "/blog/assets/B2-Cover.png"
-excerpt: "Football analytics is evolving from "where" to "how"—and it starts with the skeleton. Learn how 22-point body tracking is unlocking the ability to predict player intent and automate complex event recognition."
+excerpt: "Football analytics is evolving from \"where\" to \"how\"—and it starts with the skeleton. Learn how 22-point body tracking is unlocking the ability to predict player intent and automate complex event recognition."
 ---
 
 Football has always been a game of movement. Angles, timing, acceleration, balance, body orientation. These elements decide whether a shot bends inside the post or drifts wide, whether a tackle is clean or reckless, whether a forward beats the offside trap by inches. Yet for years, most **Football AI tracking** systems have reduced this complexity to rectangles floating across a screen.
