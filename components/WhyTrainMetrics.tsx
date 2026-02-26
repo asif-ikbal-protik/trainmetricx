@@ -55,7 +55,7 @@ export default function WhyTrainMetrics() {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="text-4xl md:text-5xl font-bold text-white mb-6"
                     >
                         Why <span className="text-primary">Train Matricx?</span>
@@ -72,7 +72,7 @@ export default function WhyTrainMetrics() {
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/[0.07] transition-all duration-300"
                         >
@@ -93,7 +93,7 @@ export default function WhyTrainMetrics() {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     className="mt-20 pt-12 border-t border-white/5 flex flex-wrap justify-center gap-12 md:gap-24 opacity-60"
                 >
                     <div className="text-center">

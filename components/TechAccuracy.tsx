@@ -49,7 +49,7 @@ export default function TechAccuracy() {
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -77,7 +77,7 @@ export default function TechAccuracy() {
                                     key={i}
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                     transition={{ delay: 0.2 + (i * 0.1) }}
                                     className="flex gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
                                 >
@@ -97,7 +97,7 @@ export default function TechAccuracy() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="relative h-[600px] flex items-center justify-center"
                     >
                         {/* Accuracy "Radar" Visual */}

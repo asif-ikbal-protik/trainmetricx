@@ -35,7 +35,7 @@ export default function CTA() {
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
                             >
                                 Ready to fuel your <span className="text-primary">Sports AI?</span>

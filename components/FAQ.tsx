@@ -61,7 +61,7 @@ export default function FAQ() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-6"
                     >
                         <HelpCircle className="w-3 h-3" />
@@ -82,7 +82,7 @@ export default function FAQ() {
                             key={index}
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: index * 0.05 }}
                             className={`rounded-2xl border transition-all duration-300 ${openIndex === index
                                 ? "bg-white/10 border-white/20"
@@ -126,7 +126,7 @@ export default function FAQ() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     className="mt-12 text-center"
                 >
                     <p className="text-white/40 text-sm">

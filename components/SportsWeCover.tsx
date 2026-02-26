@@ -60,7 +60,7 @@ export default function SportsWeCover() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.6 }}
                         className="max-w-2xl"
                     >
@@ -75,7 +75,7 @@ export default function SportsWeCover() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="hidden md:block"
                     >
                         <button className="flex items-center gap-2 text-primary hover:text-white transition-colors group">
@@ -90,7 +90,7 @@ export default function SportsWeCover() {
                             key={sport.id}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             className="group relative h-[350px] rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all overflow-hidden flex flex-col justify-end p-6 cursor-default hover:shadow-2xl hover:bg-white/[0.07]"
                         >
