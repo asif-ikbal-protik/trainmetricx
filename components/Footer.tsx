@@ -116,11 +116,11 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-sm text-white/40">
                                 <MapPin className="w-4 h-4 text-primary shrink-0" />
-                                <span>Global Distributed Workforce <br /> HQ : Dhaka, Bangladesh</span>
+                                <span>Global Distributed Workforce</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm text-white/40">
                                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                                <span>hello@trainmatricx.com</span>
+                                <span>info@trainmatricx.com</span>
                             </li>
                         </ul>
                     </div>
