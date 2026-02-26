@@ -5,22 +5,22 @@ import Link from "next/link";
 
 const footerLinks = {
     services: [
-        { name: "Video Annotation", href: "#" },
-        { name: "Event Logging", href: "#" },
-        { name: "Dataset Management", href: "#" },
-        { name: "QA & Verification", href: "#" }
+        { name: "Video Annotation", href: "/#services" },
+        { name: "Event Logging", href: "/#services" },
+        { name: "Dataset Management", href: "/#workflow" },
+        { name: "QA & Verification", href: "/#accuracy" }
     ],
     company: [
-        { name: "About Us", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Case Studies", href: "#" },
+        { name: "About Us", href: "/#why-us" },
+        { name: "Careers", href: "/" },
+        { name: "Case Studies", href: "/#use-cases" },
         { name: "Blog", href: "/blog" }
     ],
     support: [
-        { name: "Contact", href: "#" },
-        { name: "Documentation", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-        { name: "Terms of Service", href: "#" }
+        { name: "Contact", href: "/#faq" },
+        { name: "Documentation", href: "/#faq" },
+        { name: "Privacy Policy", href: "/" },
+        { name: "Terms of Service", href: "/" }
     ]
 };
 
