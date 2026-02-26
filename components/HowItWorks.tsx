@@ -60,7 +60,7 @@ export default function HowItWorks() {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="text-4xl md:text-5xl font-bold text-white mb-6"
                     >
                         Data Pipeline <span className="text-primary">Perfected</span>
@@ -125,7 +125,7 @@ export default function HowItWorks() {
                                 key={index}
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                 className="relative"
                             >
                                 <div className={`absolute -left-[3.25rem] w-10 h-10 rounded-xl flex items-center justify-center ${step.bg} ${step.color} border border-white/10 z-20`}>

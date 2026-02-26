@@ -12,7 +12,7 @@ export default function BlogCard({ post, index }: { post: BlogPost; index: numbe
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             className="group relative"
         >
             <Link href={`/blog/${post.slug}`}>

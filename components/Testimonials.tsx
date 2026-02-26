@@ -62,7 +62,7 @@ export default function Testimonials() {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="text-4xl md:text-5xl font-bold text-white mb-6"
                     >
                         Trusted by the <span className="text-primary">Innovators</span>
@@ -79,7 +79,7 @@ export default function Testimonials() {
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
                             className={`p-8 rounded-3xl border transition-all duration-300 group flex flex-col justify-between h-full ${t.featured
                                 ? "bg-white/10 border-primary/50 shadow-[0_0_30px_rgba(0,102,255,0.1)] col-span-1 md:col-span-2 lg:col-span-1"

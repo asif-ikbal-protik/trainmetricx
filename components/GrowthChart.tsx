@@ -75,7 +75,7 @@ export default function GrowthChart() {
                     style={{ filter: "drop-shadow(0 0 12px rgba(6,182,212,0.9))" }}
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     transition={{ duration: 2.5, ease: "easeInOut" }}
                 />
 
@@ -90,7 +90,7 @@ export default function GrowthChart() {
                             style={{ filter: "drop-shadow(0 0 16px rgba(6,182,212,1))" }}
                             initial={{ scale: 0, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: 0.5 + point.delay, type: "spring", stiffness: 200 }}
                         />
                         <motion.circle
@@ -100,7 +100,7 @@ export default function GrowthChart() {
                             fill="#ffffff"
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: 0.5 + point.delay + 0.2 }}
                         />
                     </g>
@@ -128,7 +128,7 @@ export default function GrowthChart() {
                     style={{ filter: "drop-shadow(0 0 8px rgba(220,38,38,0.6))" }}
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     transition={{ duration: 3.5, ease: "easeOut" }} // Slower, struggles to progress
                 />
 
@@ -144,7 +144,7 @@ export default function GrowthChart() {
                             strokeWidth="1.5"
                             initial={{ scale: 0, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 0.7 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             transition={{ delay: 0.5 + point.delay, type: "spring", stiffness: 100 }}
                         />
                     </g>
@@ -161,7 +161,7 @@ export default function GrowthChart() {
                         className="text-cyan-400 absolute bottom-full mb-8 flex items-center gap-3 whitespace-nowrap"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.8 }}
                     >
                         <div className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_15px_rgba(6,182,212,1)]" />
@@ -172,7 +172,7 @@ export default function GrowthChart() {
                         className="text-red-500/60 absolute top-full mt-8 flex flex-col gap-1 whitespace-nowrap"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         Without<br /><span className="text-white/40">Train Matricx</span>
@@ -187,7 +187,7 @@ export default function GrowthChart() {
                         style={{ left: `${(point.x / 1000) * 100}%`, top: `${(point.y / 600) * 100}%` }}
                         initial={{ opacity: 0, y: 15, scale: 0.9 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ delay: 0.7 + point.delay, type: "spring" }}
                     >
                         {/* Holographic Drop-Shadow Card */}
@@ -205,7 +205,7 @@ export default function GrowthChart() {
                         style={{ left: `${(point.x / 1000) * 100}%`, top: `${(point.y / 600) * 100}%` }}
                         initial={{ opacity: 0, y: -10 }}
                         whileInView={{ opacity: 0.8, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ delay: 0.7 + point.delay }}
                     >
                         {/* Faded Glitch Card */}
@@ -221,7 +221,7 @@ export default function GrowthChart() {
                         className="flex items-center gap-2 text-white/80 text-xs md:text-sm font-medium"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
                         <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
@@ -231,7 +231,7 @@ export default function GrowthChart() {
                         className="flex items-center gap-2 text-white/80 text-xs md:text-sm font-medium"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.8, delay: 0.7 }}
                     >
                         <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />

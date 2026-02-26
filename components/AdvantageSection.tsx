@@ -10,7 +10,7 @@ export default function AdvantageSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     transition={{ duration: 0.8 }}
                     className="relative w-full rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-4 md:p-8"
                 >
