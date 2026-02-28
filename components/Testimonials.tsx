@@ -9,7 +9,7 @@ const testimonials = [
         name: "Dark Horse AI",
         logo: "/dh-logo.svg",
         role: "Strategic Partner",
-        quote: "Train Matricx has fundamentally changed how we approach skeletal tracking. Their precision is unmatched in the industry, allowing our models to achieve state-of-the-art performance in record time.",
+        quote: "Train Matricx didn't just provide labeling; they rescued our entire deployment timeline. Annotating 600+ matches in 60 days with a sub-1% error rate is precisely why they are our premier data partner.",
         featured: true,
         badge: "US CLIENT"
     },
