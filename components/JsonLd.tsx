@@ -34,6 +34,49 @@ export default function JsonLd() {
             "High-precision computer vision training data for sports AI.",
     };
 
+    const navigationSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Services",
+                "url": "https://trainmatricx.com/#services"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "Workflow",
+                "url": "https://trainmatricx.com/#workflow"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "Accuracy",
+                "url": "https://trainmatricx.com/#accuracy"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "Use Cases",
+                "url": "https://trainmatricx.com/#use-cases"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "position": 5,
+                "name": "FAQ",
+                "url": "https://trainmatricx.com/#faq"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "position": 6,
+                "name": "Blog",
+                "url": "https://trainmatricx.com/blog"
+            }
+        ]
+    };
+
     return (
         <>
             <script
@@ -46,6 +89,12 @@ export default function JsonLd() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(websiteSchema),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(navigationSchema),
                 }}
             />
         </>
