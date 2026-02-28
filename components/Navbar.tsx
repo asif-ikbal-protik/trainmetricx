@@ -8,7 +8,7 @@ import Image from "next/image";
 import { getCalApi } from "@calcom/embed-react";
 
 const navLinks = [
-    { name: "Sports Type", href: "/#sports" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Services", href: "/#services" },
     { name: "Workflow", href: "/#workflow" },
     { name: "Blog", href: "/blog" },
