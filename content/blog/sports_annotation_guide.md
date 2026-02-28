@@ -2,7 +2,7 @@
 title: "The 2026 Guide to Sports Data Annotation: Powering the Next Generation of AI"
 date: "2026-03-01"
 category: "Data Annotation"
-author: "Train Matricx Team"
+author: "Asif Ikbal"
 coverImage: "/blog/assets/sports_annotation_guide.png"
 excerpt: "Discover why precision sports data annotation—from 22-point skeletal tracking to complex event logging—is the critical bottleneck for scaling modern Sports AI and computer vision models."
 ---
@@ -55,4 +55,4 @@ Every hour your R&D team spends cleaning up sloppy annotations is an hour they a
 
 If your sports computer vision models are plateauing, the issue is likely your Ground Truth data. Train Matricx provides dedicated, managed annotation teams optimized specifically for high-frequency sports footage.
 
-**[Book a discovery call today](https://trainmatricx.com/#cta)** to see how our multi-stage QA process guarantees 99.8% geometric accuracy on your most difficult datasets.
+**[Book a discovery call today](https://cal.com/trainmatricx/30min)** to see how our multi-stage QA process guarantees 99.8% geometric accuracy on your most difficult datasets.
