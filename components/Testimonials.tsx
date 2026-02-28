@@ -10,7 +10,8 @@ const testimonials = [
         logo: "/dh-logo.svg",
         role: "Strategic Partner",
         quote: "Train Matricx has fundamentally changed how we approach skeletal tracking. Their precision is unmatched in the industry, allowing our models to achieve state-of-the-art performance in record time.",
-        featured: true
+        featured: true,
+        badge: "US CLIENT"
     },
     {
         name: "Velocity Sports Labs",
@@ -86,7 +87,13 @@ export default function Testimonials() {
                                 : "bg-white/5 border-white/5 hover:border-white/20"
                                 }`}
                         >
-                            <div>
+                            {/* Optional Badge */}
+                            {t.badge && (
+                                <div className="absolute top-0 right-8 bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-b-xl shadow-[0_4px_15px_rgba(0,255,213,0.3)] border-x border-b border-[#00ffd5]/20 z-10">
+                                    {t.badge}
+                                </div>
+                            )}
+                            <div className="relative pt-2">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="relative">
                                         {t.logo ? (
