@@ -6,7 +6,7 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
     {
-        name: "Leading Youth Sports AI",
+        name: "Dark Horse AI",
         logo: "/dh-logo.svg",
         role: "Strategic Partner",
         quote: "Train Matricx has fundamentally changed how we approach skeletal tracking. Their precision is unmatched in the industry, allowing our models to achieve state-of-the-art performance in record time.",
