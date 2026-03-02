@@ -28,11 +28,13 @@ export default function BlogCard({ post, index }: { post: BlogPost; index: numbe
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
 
                         {/* Category Badge */}
-                        <div className="absolute top-4 left-4">
-                            <span className="px-3 py-1 rounded-sm bg-primary/80 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/20">
-                                {post.category}
-                            </span>
-                        </div>
+                        {post.category && (
+                            <div className="absolute top-4 left-4">
+                                <span className="px-3 py-1 rounded-sm bg-primary/80 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/20">
+                                    {post.category}
+                                </span>
+                            </div>
+                        )}
                     </div>
 
                     {/* Content Area */}
