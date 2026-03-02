@@ -2,6 +2,7 @@
 title: "Skeletal Tracking vs. Bounding Boxes in Sports AI: A Technical Guide to Ground Truth Data"
 date: "2026-03-03"
 author: "Asif Ikbal"
+category: "COMPUTER VISION"
 coverImage: "/blog/assets/skeletal_vs_bbox_cover.png"
 excerpt: "Which annotation strategy is right for your sports CV pipeline? We compare the computational tradeoffs, accuracy, and use cases of bounding boxes versus dense skeletal tracking for training multi-object occlusion models."
 ---

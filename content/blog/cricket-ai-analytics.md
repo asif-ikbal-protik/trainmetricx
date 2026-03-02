@@ -2,6 +2,7 @@
 title: "Training AI for Cricket Analytics: From Ball Tracking to Pose Estimation"
 date: "2026-03-04"
 author: "Asif Ikbal"
+category: "SPORTS AI"
 coverImage: "/blog/assets/cricket_pitch_analytics.png"
 excerpt: "Building computer vision models for cricket requires highly specialized Ground Truth data. Discover how we annotate ball trajectories, pitch maps, and complex bowler biomechanics for modern sports AI pipelines."
 ---
