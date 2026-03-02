@@ -23,7 +23,7 @@ export default function Hero() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 h-full min-h-screen">
 
                     {/* Left Column: High-Converting Copy */}
-                    <div className="flex items-center justify-center lg:justify-end px-4 sm:px-6 lg:px-12 py-20 lg:py-0 relative z-20">
+                    <div className="flex items-center justify-start pl-4 sm:pl-8 lg:pl-16 pr-4 lg:pr-8 py-20 lg:py-0 relative z-20">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -95,30 +95,30 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6 }}
-                                className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full"
+                                className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full"
                             >
                                 {/* Card 1 */}
-                                <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-6 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
+                                <div className="relative overflow-hidden rounded-xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-4 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
                                     <div className="absolute inset-0 bg-gradient-to-b from-[#00ffd5]/[0.02] to-transparent pointer-events-none" />
-                                    <div className="text-4xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-3 tracking-tight">35M+</div>
-                                    <div className="text-sm font-bold text-white mb-1 tracking-wide">data points</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest">annotations delivered</div>
+                                    <div className="text-2xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-1 tracking-tight">35M+</div>
+                                    <div className="text-xs font-bold text-white mb-0.5 tracking-wide">data points</div>
+                                    <div className="text-[8px] text-white/40 uppercase tracking-widest">annotations delivered</div>
                                 </div>
 
                                 {/* Card 2 */}
-                                <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-6 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
+                                <div className="relative overflow-hidden rounded-xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-4 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
                                     <div className="absolute inset-0 bg-gradient-to-b from-[#00ffd5]/[0.02] to-transparent pointer-events-none" />
-                                    <div className="text-4xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-3 tracking-tight">130K+</div>
-                                    <div className="text-sm font-bold text-white mb-1 tracking-wide">hours annotated</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest">game footage analyzed</div>
+                                    <div className="text-2xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-1 tracking-tight">130K+</div>
+                                    <div className="text-xs font-bold text-white mb-0.5 tracking-wide">hours annotated</div>
+                                    <div className="text-[8px] text-white/40 uppercase tracking-widest">footage analyzed</div>
                                 </div>
 
                                 {/* Card 3 */}
-                                <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-6 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
+                                <div className="relative overflow-hidden rounded-xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-4 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
                                     <div className="absolute inset-0 bg-gradient-to-b from-[#00ffd5]/[0.02] to-transparent pointer-events-none" />
-                                    <div className="text-4xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-3 tracking-tight">$23M+</div>
-                                    <div className="text-sm font-bold text-white mb-1 tracking-wide">revenue enabled</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest">for our clients</div>
+                                    <div className="text-2xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-1 tracking-tight">$23M+</div>
+                                    <div className="text-xs font-bold text-white mb-0.5 tracking-wide">revenue enabled</div>
+                                    <div className="text-[8px] text-white/40 uppercase tracking-widest">for our clients</div>
                                 </div>
                             </motion.div>
                         </motion.div>
