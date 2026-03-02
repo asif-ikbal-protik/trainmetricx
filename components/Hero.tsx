@@ -90,28 +90,35 @@ export default function Hero() {
                                 </Button>
                             </div>
 
-                            {/* Trust Stats Bar */}
+                            {/* Trust Stats Cards */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6 }}
-                                className="pt-8 border-t border-white/10 flex flex-wrap gap-8 md:gap-12 opacity-80"
+                                className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full"
                             >
-                                <div className="flex flex-col">
-                                    <div className="text-2xl font-bold text-white mb-0.5">10M+</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest font-mono">Annotated frames</div>
+                                {/* Card 1 */}
+                                <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-6 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
+                                    <div className="absolute inset-0 bg-gradient-to-b from-[#00ffd5]/[0.02] to-transparent pointer-events-none" />
+                                    <div className="text-4xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-3 tracking-tight">35M+</div>
+                                    <div className="text-sm font-bold text-white mb-1 tracking-wide">data points</div>
+                                    <div className="text-[10px] text-white/40 uppercase tracking-widest">annotations delivered</div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <div className="text-2xl font-bold text-white mb-0.5">99.8%</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest font-mono">Accuracy rate</div>
+
+                                {/* Card 2 */}
+                                <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-6 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
+                                    <div className="absolute inset-0 bg-gradient-to-b from-[#00ffd5]/[0.02] to-transparent pointer-events-none" />
+                                    <div className="text-4xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-3 tracking-tight">130K+</div>
+                                    <div className="text-sm font-bold text-white mb-1 tracking-wide">hours annotated</div>
+                                    <div className="text-[10px] text-white/40 uppercase tracking-widest">game footage analyzed</div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <div className="text-2xl font-bold text-white mb-0.5">24/7</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest font-mono">Operations</div>
-                                </div>
-                                <div className="flex flex-col">
-                                    <div className="text-2xl font-bold text-white mb-0.5">6+</div>
-                                    <div className="text-[10px] text-white/40 uppercase tracking-widest font-mono">Major sports</div>
+
+                                {/* Card 3 */}
+                                <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0f]/80 backdrop-blur-md border border-white/5 p-6 flex flex-col items-center text-center group hover:border-white/10 hover:bg-[#111116]/90 transition-all duration-300">
+                                    <div className="absolute inset-0 bg-gradient-to-b from-[#00ffd5]/[0.02] to-transparent pointer-events-none" />
+                                    <div className="text-4xl font-black bg-gradient-to-r from-[#00ffd5] to-[#00b8ff] text-transparent bg-clip-text mb-3 tracking-tight">$23M+</div>
+                                    <div className="text-sm font-bold text-white mb-1 tracking-wide">revenue enabled</div>
+                                    <div className="text-[10px] text-white/40 uppercase tracking-widest">for our clients</div>
                                 </div>
                             </motion.div>
                         </motion.div>
