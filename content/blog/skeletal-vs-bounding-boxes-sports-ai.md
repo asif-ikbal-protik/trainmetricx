@@ -74,4 +74,4 @@ Generating thousands of hours of 33-point skeletal Ground Truth data is a logist
 
 At **Train Matricx**, we specialize in the high-fidelity annotation that standard outsourcing firms cannot handle. Whether you need 5 million rapid bounding boxes or 50,000 frames of densely occluded, 33-point skeletal mappings for your new basketball algorithm, our managed teams deliver the quality your models require.
 
-[Book a Free Proof of Concept Call Today](https://cal.com/asif-ikbal-protik-trainmatricx/30min) and let us analyze your sports video data pipeline.
+[Book a Free Proof of Concept Call Today](https://cal.com/trainmatricx/30min) and let us analyze your sports video data pipeline.
