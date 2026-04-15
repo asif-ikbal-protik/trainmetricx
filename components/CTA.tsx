@@ -86,12 +86,21 @@ export default function CTA() {
                             <div className="max-w-md mx-auto">
                                 <h3 className="text-xl font-bold text-white mb-8">Request a Quote</h3>
 
-                                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                <form action="https://formsubmit.co/b058df6651aab183900ffaaf79cb15cf" method="POST" className="space-y-4">
+                                    {/* Honeypot for spam prevention */}
+                                    <input type="text" name="_honey" style={{ display: "none" }} />
+                                    {/* Disable captcha for seamless UX */}
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    {/* Success page routing (optional) */}
+                                    <input type="hidden" name="_next" value="https://trainmatricx.com/" />
+
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <label className="text-xs text-white/40 uppercase tracking-widest ml-1 font-mono">First Name</label>
                                             <input
                                                 type="text"
+                                                name="First Name"
+                                                required
                                                 placeholder="Lionel"
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary transition-colors focus:bg-white/[0.08]"
                                             />
@@ -100,6 +109,8 @@ export default function CTA() {
                                             <label className="text-xs text-white/40 uppercase tracking-widest ml-1 font-mono">Last Name</label>
                                             <input
                                                 type="text"
+                                                name="Last Name"
+                                                required
                                                 placeholder="Messi"
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary transition-colors focus:bg-white/[0.08]"
                                             />
@@ -110,6 +121,8 @@ export default function CTA() {
                                         <label className="text-xs text-white/40 uppercase tracking-widest ml-1 font-mono">Work Email</label>
                                         <input
                                             type="email"
+                                            name="email"
+                                            required
                                             placeholder="leo@intermiami.com"
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary transition-colors focus:bg-white/[0.08]"
                                         />
@@ -117,7 +130,7 @@ export default function CTA() {
 
                                     <div className="space-y-2">
                                         <label className="text-xs text-white/40 uppercase tracking-widest ml-1 font-mono">Primary Sport</label>
-                                        <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary transition-colors focus:bg-white/[0.08] appearance-none cursor-pointer">
+                                        <select name="Primary Sport" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary transition-colors focus:bg-white/[0.08] appearance-none cursor-pointer">
                                             <option className="bg-[#050505]">Football (Soccer)</option>
                                             <option className="bg-[#050505]">Basketball</option>
                                             <option className="bg-[#050505]">Cricket</option>
@@ -128,13 +141,15 @@ export default function CTA() {
                                     <div className="space-y-2">
                                         <label className="text-xs text-white/40 uppercase tracking-widest ml-1 font-mono">Project Scope</label>
                                         <textarea
+                                            name="Project Scope"
+                                            required
                                             rows={3}
                                             placeholder="Tell us about your annotation needs..."
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary transition-colors focus:bg-white/[0.08] resize-none"
                                         />
                                     </div>
 
-                                    <Button variant="primary" size="lg" className="w-full mt-4 flex items-center justify-center gap-2 group">
+                                    <Button variant="primary" size="lg" className="w-full mt-4 flex items-center justify-center gap-2 group" type="submit">
                                         Send Request <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </Button>
 
