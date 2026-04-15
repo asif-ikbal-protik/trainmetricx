@@ -7,6 +7,37 @@ import { useState, useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
 export default function CTA() {
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        setSubmitStatus("loading");
+        
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/b058df6651aab183900ffaaf79cb15cf", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setSubmitStatus("success");
+                form.reset();
+                setTimeout(() => setSubmitStatus("idle"), 5000);
+            } else {
+                setSubmitStatus("error");
+                setTimeout(() => setSubmitStatus("idle"), 5000);
+            }
+        } catch (error) {
+            setSubmitStatus("error");
+            setTimeout(() => setSubmitStatus("idle"), 5000);
+        }
+    };
 
     useEffect(() => {
         (async function () {
@@ -86,13 +117,11 @@ export default function CTA() {
                             <div className="max-w-md mx-auto">
                                 <h3 className="text-xl font-bold text-white mb-8">Request a Quote</h3>
 
-                                <form action="https://formsubmit.co/b058df6651aab183900ffaaf79cb15cf" method="POST" className="space-y-4">
+                                <form onSubmit={handleSubmit} className="space-y-4 relative">
                                     {/* Honeypot for spam prevention */}
                                     <input type="text" name="_honey" style={{ display: "none" }} />
                                     {/* Disable captcha for seamless UX */}
                                     <input type="hidden" name="_captcha" value="false" />
-                                    {/* Success page routing (optional) */}
-                                    <input type="hidden" name="_next" value="https://trainmatricx.com/" />
 
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="space-y-2">
@@ -149,9 +178,27 @@ export default function CTA() {
                                         />
                                     </div>
 
-                                    <Button variant="primary" size="lg" className="w-full mt-4 flex items-center justify-center gap-2 group" type="submit">
-                                        Send Request <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    <Button 
+                                        variant="primary" 
+                                        size="lg" 
+                                        className="w-full mt-4 flex items-center justify-center gap-2 group" 
+                                        type="submit"
+                                        disabled={submitStatus === "loading" || submitStatus === "success"}
+                                    >
+                                        {submitStatus === "loading" && "Sending..."}
+                                        {submitStatus === "success" && (
+                                            <>Sent successfully <CheckCircle className="w-5 h-5" /></>
+                                        )}
+                                        {(submitStatus === "idle" || submitStatus === "error") && (
+                                            <>Send Request <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
+                                        )}
                                     </Button>
+
+                                    {submitStatus === "error" && (
+                                        <div className="absolute inset-x-0 -bottom-8 text-center text-red-500 text-sm">
+                                            Something went wrong. Please try again.
+                                        </div>
+                                    )}
 
                                     <p className="text-[10px] text-white/30 text-center mt-4">
                                         By submitting, you agree to our <span className="underline cursor-pointer hover:text-white/50">Privacy Policy</span> and <span className="underline cursor-pointer hover:text-white/50">Terms</span>.
