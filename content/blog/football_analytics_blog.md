@@ -1,5 +1,5 @@
 ---
-title: "The Ultimate Guide to Football AI Tracking with 22-Point Skeletal Data and Complex Event Recognition"
+title: "Mastering Football AI Tracking: Implementing 22-Point Skeletal Data & Complex Event Recognition"
 date: "2026-02-25"
 category: "Technology"
 author: "Jubayer Ahmed"
