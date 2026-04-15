@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, PlayCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, PlayCircle, X } from "lucide-react";
 import Button from "./ui/Button";
 import HolographicMatch from "./HolographicMatch";
 import { useState, useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
 export default function Hero() {
+    const [showDemo, setShowDemo] = useState(false);
 
     useEffect(() => {
         (async function () {
@@ -85,7 +86,12 @@ export default function Hero() {
                                 >
                                     Book a Call
                                 </Button>
-                                <Button variant="outline" size="lg" icon={<PlayCircle className="w-5 h-5" />}>
+                                <Button 
+                                    variant="outline" 
+                                    size="lg" 
+                                    icon={<PlayCircle className="w-5 h-5" />}
+                                    onClick={() => setShowDemo(true)}
+                                >
                                     View Demo
                                 </Button>
                             </div>
@@ -144,6 +150,30 @@ export default function Hero() {
                 </div>
             </div>
 
+
+            {/* Video Modal Overlay */}
+            {showDemo && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm px-4">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden border border-white/20 shadow-2xl"
+                    >
+                        <button 
+                            onClick={() => setShowDemo(false)}
+                            className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full transition-colors"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <video 
+                            src="/demo/demo_annotation.mp4"
+                            autoPlay 
+                            controls
+                            className="w-full h-full object-contain"
+                        />
+                    </motion.div>
+                </div>
+            )}
 
         </section>
     );
