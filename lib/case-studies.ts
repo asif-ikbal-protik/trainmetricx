@@ -13,6 +13,11 @@ export interface CaseStudy {
     coverImage: string;
     excerpt: string;
     content: string;
+    stats?: {
+        value: string;
+        suffix?: string;
+        label: string;
+    }[];
 }
 
 export function getAllCaseStudies(): CaseStudy[] {
@@ -32,7 +37,7 @@ export function getAllCaseStudies(): CaseStudy[] {
             return {
                 slug,
                 content,
-                ...(data as { title: string; date: string; client: string; industry: string; coverImage: string; excerpt: string }),
+                ...(data as { title: string; date: string; client: string; industry: string; coverImage: string; excerpt: string; stats?: { value: string; suffix?: string; label: string; }[] }),
             };
         });
 
@@ -48,7 +53,7 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
         return {
             slug,
             content,
-            ...(data as { title: string; date: string; client: string; industry: string; coverImage: string; excerpt: string }),
+            ...(data as { title: string; date: string; client: string; industry: string; coverImage: string; excerpt: string; stats?: { value: string; suffix?: string; label: string; }[] }),
         };
     } catch {
         return null;

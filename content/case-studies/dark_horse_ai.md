@@ -1,10 +1,17 @@
 ---
-title: "Powering AI Highlight Reels: Annotating 600+ Youth Soccer Matches in 60 Days"
+title: "Powering AI Highlight Reels"
 date: "2026-03-01"
 client: "Dark Horse AI"
 industry: "Sports Video AI & Highlight Generation"
 coverImage: "/blog/assets/sports_annotation_guide.png"
-excerpt: "Train Matricx cleared a massive data backlog for Dark Horse AI's highlight reel builder, onboarding a 30-person team in one week to annotate 600+ matches with sub-1% error rates."
+excerpt: "We successfully annotated over 600 youth soccer matches in just 60 days, providing the precise skeletal data needed to automate highlight reel generation for a major sports tech startup."
+stats:
+  - value: "600"
+    suffix: "+"
+    label: "Matches Annotated"
+  - value: "60"
+    suffix: " Days"
+    label: "Turnaround Time"
 ---
 
 ## The Challenge: A Collapsed Data Pipeline in Youth Sports

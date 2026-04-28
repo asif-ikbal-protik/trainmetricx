@@ -37,8 +37,8 @@ export default function CaseStudiesPage() {
             </section>
 
             {/* Grid */}
-            <section className="pb-32 container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <section className="pb-32 container mx-auto px-6 max-w-5xl relative z-10">
+                <div className="flex flex-col gap-12">
                     {caseStudies.map((caseStudy, index) => (
                         <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} index={index} />
                     ))}

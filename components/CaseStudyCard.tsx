@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Building2, Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { CaseStudy } from "@/lib/case-studies";
 
 export default function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStudy; index: number }) {
@@ -13,52 +12,53 @@ export default function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStu
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-            className="group relative"
         >
-            <Link href={`/case-studies/${caseStudy.slug}`}>
-                <div className="relative h-full bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 flex flex-col">
-                    {/* Image Area */}
-                    <div className="relative h-48 w-full overflow-hidden bg-white/5 flex items-center justify-center p-8">
-                        <Image
-                            src={caseStudy.coverImage}
-                            alt={caseStudy.client}
-                            fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-50"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+            <Link href={`/case-studies/${caseStudy.slug}`} className="group block">
+                <div className="relative bg-[#0E1428] border border-white/5 rounded-2xl overflow-hidden hover:border-[#3b82f6]/30 transition-all duration-500 shadow-2xl">
+                    {/* Subtle Glow */}
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3b82f6]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
-                        <div className="absolute inset-0 flex items-center justify-center z-10 text-3xl font-bold text-white tracking-widest uppercase">
-                            {caseStudy.client}
-                        </div>
-                    </div>
-
-                    {/* Content Area */}
-                    <div className="p-6 flex flex-col flex-grow">
-                        <div className="flex items-center gap-4 text-[10px] text-white/40 uppercase tracking-widest mb-3">
-                            <div className="flex items-center gap-1">
-                                <Target className="w-3 h-3" />
-                                <span>{caseStudy.industry}</span>
+                    <div className="p-10 md:p-14 flex flex-col md:flex-row gap-12 md:gap-20 relative z-10">
+                        {/* Left Side: Content */}
+                        <div className="flex-1 flex flex-col justify-center">
+                            <div className="text-[#60a5fa] font-bold text-xs uppercase tracking-widest mb-6">
+                                Case Study
+                            </div>
+                            
+                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                                {caseStudy.title}
+                            </h3>
+                            
+                            <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-10 max-w-xl">
+                                {caseStudy.excerpt}
+                            </p>
+                            
+                            <div className="flex items-center gap-2 text-[#60a5fa] font-semibold text-sm">
+                                Read Full Story
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </div>
 
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors line-clamp-2 leading-snug">
-                            {caseStudy.title}
-                        </h3>
-
-                        <p className="text-white/50 text-xs leading-relaxed mb-6 line-clamp-3">
-                            {caseStudy.excerpt}
-                        </p>
-
-                        <div className="mt-auto flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest">
-                            <span>Read Case Study</span>
-                            <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                        </div>
+                        {/* Right Side: Stats */}
+                        {caseStudy.stats && caseStudy.stats.length > 0 && (
+                            <div className="md:w-72 flex flex-col justify-center shrink-0">
+                                {caseStudy.stats.map((stat, i) => (
+                                    <div key={i} className={`flex flex-col items-center md:items-end text-center md:text-right ${i !== caseStudy.stats!.length - 1 ? 'border-b border-white/10 mb-8 pb-8' : ''}`}>
+                                        <div className="text-6xl md:text-7xl font-bold text-white mb-2 tracking-tighter flex items-center">
+                                            {stat.value}
+                                            {stat.suffix && <span className="text-[#3b82f6] ml-1">{stat.suffix}</span>}
+                                        </div>
+                                        <div className="text-slate-400 text-sm md:text-base font-medium">
+                                            {stat.label}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
-
-                    {/* Scan Line Effect */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20" />
                 </div>
             </Link>
         </motion.div>
     );
 }
+
